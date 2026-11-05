@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guitar Lab – 일렉기타 연습실</title>
+  <meta name="description" content="실용음악 · CCM 일렉기타 레슨용 연습 사이트: 왼손(9·11·13 텐션), 오른손(16비트 리듬), 싱글노트 양손 통합 연습">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home">
+      <span class="logo">🎸</span>
+      <span><b>Guitar Lab</b><small>실용음악 · CCM 일렉기타 연습실</small></span>
+    </a>
+    <nav class="main-nav">
+      <a href="#home" data-route="home">홈</a>
+      <a href="#left" data-route="left"><span class="dot left"></span>왼손</a>
+      <a href="#right" data-route="right"><span class="dot right"></span>오른손</a>
+      <a href="#single" data-route="single"><span class="dot both"></span>싱글노트(양손)</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 홈 -->
+    <section id="view-home" class="view">
+      <div class="hero">
+        <h1>왼손 · 오른손을 나눠서, 싱글노트는 함께.</h1>
+        <p>실용음악과 CCM 연주에 필요한 핵심 테크닉을 손 별로 분리해 익히고, 싱글노트 연습에서 두 손을 하나로 합칩니다.</p>
+      </div>
+      <div class="home-grid">
+        <a class="home-card left" href="#left">
+          <span class="tag left">왼손</span>
+          <h2>9 · 11 · 13 텐션 익히기</h2>
+          <ul>
+            <li>코드별 텐션 위치를 지판 전체에서 확인</li>
+            <li>실전 텐션 보이싱 & CCM 진행 속 텐션</li>
+            <li>텐션 음이름 / 지판 찾기 퀴즈</li>
+          </ul>
+        </a>
+        <a class="home-card right" href="#right">
+          <span class="tag right">오른손</span>
+          <h2>16비트 리듬 다양하게 익히기</h2>
+          <ul>
+            <li>16비트 패턴 라이브러리 & 랜덤 생성기</li>
+            <li>음표 하나하나 분리 연습 (1 · e · & · a)</li>
+            <li>16분음표 15가지 셀 자동 드릴</li>
+          </ul>
+        </a>
+        <a class="home-card both" href="#single">
+          <span class="tag both">양손 통합</span>
+          <h2>싱글노트 패턴 생성</h2>
+          <ul>
+            <li>왼손 운지 패턴 (스케일 · 3NPS · 크로매틱)</li>
+            <li>오른손 피킹 패턴 (얼터네이트 · 이코노미 · 레가토)</li>
+            <li>두 패턴을 합친 TAB 자동 생성 & 재생</li>
+          </ul>
+        </a>
+      </div>
+      <div class="card tips">
+        <h3>사용 팁</h3>
+        <ul>
+          <li><b>스페이스바</b>로 현재 화면의 재생/정지를 할 수 있습니다.</li>
+          <li><b>템포 트레이너</b>를 켜면 정해진 반복마다 BPM이 자동으로 올라갑니다.</li>
+          <li>오른손 섹션에서 만든 16비트 리듬을 싱글노트 섹션의 <b>"16비트 리듬 적용"</b>으로 가져가 양손을 함께 연습하세요.</li>
+          <li>소리가 나지 않으면 기기의 무음 모드를 해제해 주세요 (iPhone 측면 스위치).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 왼손 -->
+    <section id="view-left" class="view hidden">
+      <div class="section-head left">
+        <span class="tag left">왼손</span>
+        <h1>왼손 연습</h1>
+      </div>
+      <nav class="subnav">
+        <button type="button" data-sub="tension" class="active">9·11·13 텐션 지판</button>
+        <button type="button" data-sub="progression">진행 속 텐션 보이싱</button>
+        <button type="button" data-sub="quiz">텐션 퀴즈</button>
+        <a class="subnav-link both" href="#single/left">싱글노트 왼손 패턴 → <small>양손 통합 연습</small></a>
+      </nav>
+      <div class="subpanel" data-panel="tension"></div>
+      <div class="subpanel hidden" data-panel="progression"></div>
+      <div class="subpanel hidden" data-panel="quiz"></div>
+    </section>
+
+    <!-- 오른손 -->
+    <section id="view-right" class="view hidden">
+      <div class="section-head right">
+        <span class="tag right">오른손</span>
+        <h1>오른손 연습</h1>
+      </div>
+      <div id="rhythm-player"></div>
+      <nav class="subnav">
+        <button type="button" data-sub="library" class="active">16비트 패턴 & 생성기</button>
+        <button type="button" data-sub="separation">음표 분리 연습</button>
+        <a class="subnav-link both" href="#single/right">싱글노트 오른손 패턴 → <small>양손 통합 연습</small></a>
+      </nav>
+      <div class="subpanel" data-panel="library"></div>
+      <div class="subpanel hidden" data-panel="separation"></div>
+    </section>
+
+    <!-- 싱글노트 -->
+    <section id="view-single" class="view hidden">
+      <div class="section-head both">
+        <span class="tag both">양손 통합</span>
+        <h1>싱글노트 연습</h1>
+        <p class="muted">왼손 패턴(운지)과 오른손 패턴(피킹·리듬)을 각각 고르면 하나의 연습 TAB으로 합쳐집니다.</p>
+      </div>
+      <div id="single-root"></div>
+    </section>
+  </main>
+
+  <footer class="footer">Guitar Lab · 실용음악 & CCM 일렉기타 레슨용</footer>
+
+  <script src="js/music.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/tension.js"></script>
+  <script src="js/rhythm.js"></script>
+  <script src="js/singlenote.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
